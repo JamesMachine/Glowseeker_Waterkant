@@ -1,3 +1,2 @@
 streamlit-audiorec
-streamlit-audiorecorder
 openai
