@@ -4,10 +4,6 @@ from openai import OpenAI
 import prompt_db
 import time
 
-import pages.scanner as ps
-
-
-
 api_key=st.secrets.api_key
 client = OpenAI(api_key=api_key)
 
