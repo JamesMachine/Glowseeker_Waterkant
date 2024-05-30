@@ -42,7 +42,24 @@ class StAudioRec extends StreamlitComponentBase<State> {
     return (
       <span>
         <div>
-          <button id='record' onClick={this.onClick_start}>
+
+          <AudioReactRecorder
+            state={recordState}
+            onStop={this.onStop_audio}
+            type='audio/wav'
+            backgroundColor='rgb(255,76,75)'
+            foregroundColor='rgb(255,76,75)'
+            canvasWidth={400}
+            canvasHeight={100}
+          />
+
+          <audio
+            id='audio'
+            controls
+            src={this.state.audioDataURL}
+          />
+
+          <button id='record' onClick={this.onClick_start} >
             Start Recording
           </button>
           <button id='stop' onClick={this.onClick_stop}>
@@ -55,22 +72,6 @@ class StAudioRec extends StreamlitComponentBase<State> {
           <button id='continue' onClick={this.onClick_continue}>
             Download
           </button>
-
-          <AudioReactRecorder
-            state={recordState}
-            onStop={this.onStop_audio}
-            type='audio/wav'
-            backgroundColor='rgb(255, 255, 255)'
-            foregroundColor='rgb(255,76,75)'
-            canvasWidth={450}
-            canvasHeight={100}
-          />
-
-          <audio
-            id='audio'
-            controls
-            src={this.state.audioDataURL}
-          />
 
         </div>
       </span>
